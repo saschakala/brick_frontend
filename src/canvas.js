@@ -14,13 +14,13 @@ var rightPressed = false;
 var leftPressed = false;
 var interval = setInterval(draw, 10);
 
-var brickRowCount = 3;
-var brickColumnCount = 5;
-var brickWidth = 75;
+var brickRowCount = 4;
+var brickColumnCount = 6;
+var brickWidth = 70;
 var brickHeight = 20;
-var brickPadding = 10;
-var brickOffsetTop = 30;
-var brickOffsetLeft = 30;
+var brickPadding = 7;
+var brickOffsetTop = 10;
+var brickOffsetLeft = 12;
 
 var bricks = [];
 for(var c=0; c<brickColumnCount; c++) {
