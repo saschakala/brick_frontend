@@ -12,7 +12,6 @@ var paddleWidth = 75;
 var paddleX = (canvas.width-paddleWidth) / 2;
 var rightPressed = false;
 var leftPressed = false;
-var interval = setInterval(draw, 10);
 
 function drawBall() {
     ctx.beginPath();
@@ -33,27 +32,22 @@ function drawPaddle() {
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); 
     drawBall();
-    drawPaddle();
 
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
     }
-    if(y + dy < ballRadius) {
+    if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
         dy = -dy;
-    } else if(y + dy > canvas.height-ballRadius+2) {
-        if(x > paddleX && x < paddleX + paddleWidth) {
-            dy = -dy;
-            // interval = setInterval(draw, 8) increase speed the more it gets hit
-        }
-        else {
-            alert("GAME OVER");
-            document.location.reload();
-            clearInterval(interval);
-        }
     }
 
     x += dx;
     y += dy;
+
+}
+
+function movePaddle(){
+    ctx.clearRect(paddleX, height-paddleHeight, paddleWidth, paddleHeight); 
+    drawPaddle();
 
     if(rightPressed) {
         paddleX += 3;
@@ -67,6 +61,7 @@ function draw() {
             paddleX = 0;
         }
     }
+
 }
 
 document.addEventListener("keydown", keyDownHandler, false);
@@ -90,4 +85,6 @@ function keyUpHandler(e) {
     }
 }
 
+setInterval(draw, 2);
 
+setInterval(movePaddle, 2);
