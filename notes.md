@@ -33,3 +33,4 @@ has_many :games
 - [ ] increase speed every 5 paddle saves
 - [ ] change ball color every paddle hit
 - [ ] pause game
+- [ ] move score off canvas
