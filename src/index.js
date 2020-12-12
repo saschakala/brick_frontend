@@ -1,14 +1,23 @@
-ctx.beginPath();
-ctx.fillStyle = "#f3ea5f";
-ctx.fillRect(20, 40, 75, 20);
+const endPoint = "http://localhost:3000/api/v1/games"
 
-ctx.strokeStyle = "#ff48c4";
-ctx.lineWidth = 4;
-ctx.strokeRect(20, 40, 75, 20);
-ctx.closePath();
+document.addEventListener('DOMContentLoaded', () => {
+    getGames()
+})
 
-ctx.beginPath();
-ctx.arc(240, 160, 7, 0, Math.PI*2, false);
-ctx.fillStyle = "#FDA400";
-ctx.fill();
-ctx.closePath(); 
+function getGames() {
+    fetch(endPoint)
+    .then(response => response.json())
+    .then(games => {
+        games.data.forEach(game => {
+            const gameMarkup = `
+                <div data-id=${game.id}>
+                <h3>${game.attributes.user.name}</h3>
+                <p>${game.attributes.score}</p>
+                </div>
+                <br> </br>`;
+
+                document.querySelector("#score-container").innerHTML += gameMarkup
+        });
+    })
+
+}
