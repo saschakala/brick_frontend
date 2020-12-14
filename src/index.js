@@ -9,6 +9,9 @@ function getGames() {
     .then(response => response.json())
     .then(games => {
         games.data.forEach(game => {
+            // can turn the following into a function to use with GET and POST:
+
+            // create a new instance of a game class here
             const gameMarkup = `
                 <div data-id=${game.id}>
                 <h3>${game.attributes.user.name}</h3>
