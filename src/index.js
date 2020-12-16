@@ -1,7 +1,11 @@
 const endPoint = "http://localhost:3000/api/v1/games"
+const gameForm = document.getElementById("game-form")
+const formScore = document.getElementById("score")
+const formName = document.getElementById("name")
 
 document.addEventListener('DOMContentLoaded', () => {
     getGames()
+    submitForm()
 })
 
 function getGames() {
@@ -17,4 +21,17 @@ function getGames() {
     })
 
 }
+
+function submitForm(){
+    gameForm.addEventListener("submit", (e) => formHandler(e))
+}
+
+function formHandler(e) {
+    e.preventDefault()
+    console.log("This Works")
+}
+
+// function getFormInfo(event){
+
+// }
 
