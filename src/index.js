@@ -33,7 +33,9 @@ function formHandler(e) {
 }
 
 function postFetch(score, user_name){
-    const bodyData = {score, user_name}
+    const bodyData = {game:
+            {score, user_name}
+            }
 
     fetch(endPoint, {
         method: "POST",
