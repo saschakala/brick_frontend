@@ -34,7 +34,6 @@ function formHandler(e) {
 
 function postFetch(score, user_name){
     const bodyData = {score, user_name}
-    debugger
 
     fetch(endPoint, {
         method: "POST",
