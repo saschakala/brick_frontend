@@ -3,23 +3,22 @@ const gameForm = document.getElementById("game-form")
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    getGames()
+    loadGames()
     submitForm()
 })
 
-function getGames() {
+function loadGames() {
     fetch(endPoint)
     .then(response => response.json())
     .then(games => {
         games.data.forEach(game => {
-            // create a new instance of a game class here
             const newGame = new Game(game.id, game.attributes);
 
             document.querySelector("#score-board-container").innerHTML += newGame.renderGame();
         });
     })
-
 }
+
 
 function submitForm(){
     gameForm.addEventListener("submit", (e) => formHandler(e))
@@ -33,21 +32,26 @@ function formHandler(e) {
 }
 
 function postFetch(score, user_name){
-    const bodyData = {game:
+    const bodyData = 
+        {game:
             {score, user_name}
-            }
+        }
 
     fetch(endPoint, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(bodyData),
     })
-    .then(response => response.json())
+    .then(resp => resp.json())
     .then(game => {
-    console.log(game);
-    const gameData = game.data
-    let newGame = new Game(gameData.id, gameData.attributes);
-    document.querySelector("#score-board-container").innerHTML += newGame.renderGame();
+        if (!game.errors) {
+        const gameData = game.data;
+        let newGame = new Game(gameData.id, gameData.attributes);
+        document.querySelector("#score-board-container").innerHTML += newGame.renderGame();
+        } else {
+            throw new Error (`${game.errors}`)
+        }
     })
+    .catch(alert)
 }
 
