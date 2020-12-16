@@ -15,7 +15,7 @@ function getGames() {
             // create a new instance of a game class here
             const newGame = new Game(game.id, game.attributes);
 
-            document.querySelector("#score-container").innerHTML += newGame.renderGame();
+            document.querySelector("#score-board-container").innerHTML += newGame.renderGame();
         });
     })
 
@@ -45,7 +45,7 @@ function postFetch(score, user_name){
     console.log(game);
     const gameData = game.data
     let newGame = new Game(gameData.id, gameData.attributes);
-    document.querySelector("#score-container").innerHTML += newGame.renderGame();
+    document.querySelector("#score-board-container").innerHTML += newGame.renderGame();
     })
 }
 
