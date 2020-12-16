@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="css/index.css">
     <meta charset="utf-8" />
     <title>Brick Game</title>
     <style>
-    	* { padding: 0; margin: 0; }
-    	canvas { background: #eee; display: block; margin: 0 auto; }
+    	/* * { padding: 0; margin: 0; } */
+    	canvas { background: #eee;}
     </style>
 </head>
 <body>
+<div class="elements">
+    <div class="element">
+        <canvas id="myCanvas" width="480" height="320"></canvas>
+    </div>
 
-    <canvas id="myCanvas" width="480" height="320"></canvas>
+    <div class="element">
+
+        <form id="game-form" data-action="create">
+            <div class="input-field">
+                <input type="text" name="name" id="name" placeholder="Name">
+                <label for="name"></label>
+            </div>
     
-    <div id="score-container"> </div>
+            <div class="input-field">
+                <input type="number" name="score" id="score" placeholder="Score">
+                <label for="score"></label>
+            </div>
 
-    <form id="game-form" data-action="create">
-        <div class="input-field">
-            <input type="text" name="name" id="name" placeholder="Name">
-            <label for="name"></label>
-        </div>
-  
-        <div class="input-field">
-            <input type="number" name="score" id="score" placeholder="Score">
-            <label for="score"></label>
-        </div>
+            <input type="submit" value="Save Score" class="button">
+        </form>
 
-        <input type="submit" value="Save Score" class="button">
+        <div id="score-board-container"> </div>
+        
+    </div>
 
-    </form>
+</div>
 
 
 </body>
