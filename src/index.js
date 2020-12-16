@@ -1,7 +1,6 @@
 const endPoint = "http://localhost:3000/api/v1/games"
 const gameForm = document.getElementById("game-form")
-const formScore = document.getElementById("score")
-const formName = document.getElementById("name")
+
 
 document.addEventListener('DOMContentLoaded', () => {
     getGames()
@@ -28,10 +27,26 @@ function submitForm(){
 
 function formHandler(e) {
     e.preventDefault()
-    console.log("This Works")
+    const formScore = parseInt(document.getElementById("score").value)
+    const formName = document.getElementById("name").value
+    postFetch(formScore, formName)
 }
 
-// function getFormInfo(event){
+function postFetch(score, user_name){
+    const bodyData = {score, user_name}
+    debugger
 
-// }
+    fetch(endPoint, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(bodyData),
+    })
+    .then(response => response.json())
+    .then(game => {
+    console.log(game);
+    const gameData = game.data
+    let newGame = new Game(gameData.id, gameData.attributes);
+    document.querySelector("#score-container").innerHTML += newGame.renderGame();
+    })
+}
 
