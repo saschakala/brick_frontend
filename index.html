@@ -14,14 +14,25 @@
     
     <div id="score-container"> </div>
 
-<script type="text/javascript" src="src/canvas.js"></script>
+    <form id="game-form" data-action="create">
+        <div class="input-field">
+            <input type="text" name="name" id="name" placeholder="Name">
+            <label for="name"></label>
+        </div>
+  
+        <div class="input-field">
+            <input type="number" name="score" id="score" placeholder="Score">
+            <label for="score"></label>
+        </div>
+
+        <input type="submit" value="Save Score" class="button">
+
+    </form>
+
+
+</body>
+<!-- <script type="text/javascript" src="src/canvas.js"></script> -->
 <!-- <script type="text/javascript" src="src/test.js"></script> -->
 <script type="text/javascript" src="src/index.js"></script>
 <script type="text/javascript" src="src/models/game.js"></script>
-
-<script>
-
-</script>
-
-</body>
 </html>

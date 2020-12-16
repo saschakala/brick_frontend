@@ -1,6 +1,5 @@
 class Game{
     constructor(id, gameAttributes){
-        debugger
     this.id = id;
     this.userName = gameAttributes.user.name;
     this.score = gameAttributes.score;
