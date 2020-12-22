@@ -2,8 +2,8 @@ MVP:
 
 - [ ] Brick game that keeps track of score
 - [ ] Can save scores under a user (fetch - CREATE)
-- [x] Can view scores of all the users (fetch - READ)
-
+- [ ] Can view scores of all the users (fetch - READ)
+- [ ] Can delete your score (fetch - DELETE)
 
 ### Models:
 

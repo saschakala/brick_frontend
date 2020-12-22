@@ -26,6 +26,7 @@ function submitForm(){
 
 function formHandler(e) {
     e.preventDefault()
+    // change what formScore is equal to
     const formScore = parseInt(document.getElementById("score").value)
     const formName = document.getElementById("name").value
     postFetch(formScore, formName)
@@ -33,6 +34,7 @@ function formHandler(e) {
 
 function postFetch(score, user_name){
     const bodyData = 
+    // this object created to satisfy strong params on back end (:game is required)
         {game:
             {score, user_name}
         }
