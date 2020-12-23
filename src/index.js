@@ -1,7 +1,6 @@
 const endPoint = "http://localhost:3000/api/v1/games"
 const gameForm = document.getElementById("game-form")
 const scoreModal = document.getElementById("scoreModal");
-const testButton = document.getElementById("test");
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,13 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     submitForm()
 })
 
-testButton.addEventListener("click", () => {
-    modalDisplay()
-})
 
-function modalDisplay() {
-    scoreModal.style.display = "block";
-}
 
 
 
