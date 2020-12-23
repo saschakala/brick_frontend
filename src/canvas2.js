@@ -41,13 +41,6 @@ function ballStop() {
     dx = 0
 }
 
-function modalDisplay() {
-    const scoreModal = document.getElementById("scoreModal")
-    scoreModal.style.display = "block";
-    debugger
-}
-
-
 function canvasReload() {
     document.location.reload();
     clearInterval(interval); // Needed for Chrome to end game
