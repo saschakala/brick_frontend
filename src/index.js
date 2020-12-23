@@ -1,5 +1,6 @@
-const endPoint = "http://localhost:3000/api/v1/games"
-const gameForm = document.getElementById("game-form")
+const endPoint = "http://localhost:3000/api/v1/games";
+const gameForm = document.getElementById("game-form");
+const scoreModal = document.getElementById("scoreModal");
 // const scoreModal = document.getElementById("scoreModal");
 
 
@@ -8,7 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
     submitForm()
 })
 
+function modalDisplay() {
+    scoreModal.style.display = "block";
+}
 
+function modalClear() {
+    scoreModal.style.display = "none";
+}
 
 
 
@@ -60,6 +67,7 @@ function postFetch(score, user_name){
         }
     })
     .catch(alert)
-    canvasReload()
+    modalClear()
 }
+
 
