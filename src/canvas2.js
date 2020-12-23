@@ -44,6 +44,7 @@ function ballStop() {
 function modalDisplay() {
     const scoreModal = document.getElementById("scoreModal")
     scoreModal.style.display = "block";
+    debugger
 }
 
 
@@ -163,7 +164,9 @@ function draw() {
             if(!lives) {
                 ballStop()
                 let finalScore = score
-                let scoreElement = `<h3>Score: ${finalScore}</h3>`
+                let scoreElement = `
+                    <h2>Score</h2>
+                    <h3 id="score">${finalScore}</h3>`
                 scoreDisplay.innerHTML += scoreElement
                 // alert("GAME OVER");
                 modalDisplay()

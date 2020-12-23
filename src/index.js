@@ -1,6 +1,6 @@
 const endPoint = "http://localhost:3000/api/v1/games"
 const gameForm = document.getElementById("game-form")
-const scoreModal = document.getElementById("scoreModal");
+// const scoreModal = document.getElementById("scoreModal");
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,13 +26,13 @@ function loadGames() {
 
 
 function submitForm(){
-    scoreModal.addEventListener("submit", (e) => formHandler(e))
+    gameForm.addEventListener("submit", (e) => formHandler(e))
 }
 
 function formHandler(e) {
     e.preventDefault()
     // change what formScore is equal to
-    const formScore = parseInt(document.getElementById("score").value)
+    const formScore = parseInt(document.getElementById("score").innerText)
     const formName = document.getElementById("name").value
     postFetch(formScore, formName)
 }
