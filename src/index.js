@@ -2,7 +2,6 @@ const endPoint = "http://localhost:3000/api/v1/games";
 const gameForm = document.getElementById("game-form");
 const scoreModal = document.getElementById("scoreModal");
 const buttonModal = document.getElementById("buttonModal");
-// const scoreModal = document.getElementById("scoreModal");
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,17 +12,28 @@ document.addEventListener('DOMContentLoaded', () => {
 function gameOver() {
     scoreModal.style.display = "block";
     document.getElementById("game-over").style.display = "block";
+    clickToClose()
 }
 
 function gameWin() {
     scoreModal.style.display = "block";
     document.getElementById("game-win").style.display = "block";
+    clickToClose()
 }
 
 function modalClear() {
     scoreModal.style.display = "none";
     replay()
-    // pop up button
+}
+
+function clickToClose() {
+    const closeX = document.getElementById("close-modal")
+    closeX.addEventListener("click", handleCloseClick)
+}
+
+function handleCloseClick() {
+    scoreModal.style.display = "none"
+    canvasReload()
 }
 
 function replay() {
