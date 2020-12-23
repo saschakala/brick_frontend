@@ -15,6 +15,7 @@ function modalDisplay() {
 
 function modalClear() {
     scoreModal.style.display = "none";
+    // pop up button
 }
 
 
