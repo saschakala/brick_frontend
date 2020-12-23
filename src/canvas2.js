@@ -22,6 +22,7 @@ var brickHeight = 20;
 var brickPadding = 7;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 12;
+let scoreDisplay = document.getElementById("score-display")
 
 
 var bricks = [];
@@ -34,6 +35,11 @@ for(var c=0; c<brickColumnCount; c++) {
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+
+function ballStop() {
+    dy = 0
+    dx = 0
+}
 
 function modalDisplay() {
     const scoreModal = document.getElementById("scoreModal")
@@ -155,9 +161,11 @@ function draw() {
         else {
             lives--;
             if(!lives) {
-                dy = 0
-                dx = 0
-                alert("GAME OVER");
+                ballStop()
+                let finalScore = score
+                let scoreElement = `<h3>Score: ${finalScore}</h3>`
+                scoreDisplay.innerHTML += scoreElement
+                // alert("GAME OVER");
                 modalDisplay()
                 // document.location.reload();
                 // clearInterval(interval); // Needed for Chrome to end game
