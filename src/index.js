@@ -1,13 +1,13 @@
 const endPoint = "http://localhost:3000/api/v1/games";
 const gameForm = document.getElementById("game-form");
 const scoreModal = document.getElementById("scoreModal");
+const buttonModal = document.getElementById("buttonModal");
 // const scoreModal = document.getElementById("scoreModal");
 
 
 document.addEventListener('DOMContentLoaded', () => {
     loadGames()
     submitForm()
-    replay()
 })
 
 function modalDisplay() {
@@ -21,6 +21,7 @@ function modalClear() {
 }
 
 function replay() {
+    buttonModal.style.display = "block";
     replayButton = document.getElementById("replay-button")
     replayButton.addEventListener("click", canvasReload)
 }
