@@ -7,6 +7,7 @@ const scoreModal = document.getElementById("scoreModal");
 document.addEventListener('DOMContentLoaded', () => {
     loadGames()
     submitForm()
+    replay()
 })
 
 function modalDisplay() {
@@ -15,9 +16,14 @@ function modalDisplay() {
 
 function modalClear() {
     scoreModal.style.display = "none";
+    replay()
     // pop up button
 }
 
+function replay() {
+    replayButton = document.getElementById("replay-button")
+    replayButton.addEventListener("click", canvasReload)
+}
 
 
 function loadGames() {
