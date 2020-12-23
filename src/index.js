@@ -10,8 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
     submitForm()
 })
 
-function modalDisplay() {
+function gameOver() {
     scoreModal.style.display = "block";
+    document.getElementById("game-over").style.display = "block";
+}
+
+function gameWin() {
+    scoreModal.style.display = "block";
+    document.getElementById("game-win").style.display = "block";
 }
 
 function modalClear() {
