@@ -22,6 +22,8 @@ var brickHeight = 20;
 var brickPadding = 7;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 12;
+let scoreDisplay = document.getElementById("score-display")
+
 
 var bricks = [];
 for(var c=0; c<brickColumnCount; c++) {
@@ -33,6 +35,16 @@ for(var c=0; c<brickColumnCount; c++) {
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+
+function ballStop() {
+    dy = 0
+    dx = 0
+}
+
+function canvasReload() {
+    document.location.reload();
+    clearInterval(interval); // Needed for Chrome to end game
+}
 
 function keyDownHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
@@ -62,9 +74,16 @@ function collisionDetection() {
                     b.status = 0;
                     score++;
                     if(score === brickRowCount*brickColumnCount) {
-                        alert("YOU WIN, CONGRATULATIONS!");
-                        document.location.reload();
-                        clearInterval(interval); // Needed for Chrome to end game
+                        let finalScore = score
+                        let scoreElement = `
+                            <h2>Score</h2>
+                            <h3 id="score">${finalScore}</h3>`
+                        scoreDisplay.innerHTML += scoreElement
+                        // alert("GAME OVER");
+                        gameWin()
+                        // alert("YOU WIN, CONGRATULATIONS!");
+                        // document.location.reload();
+                        // clearInterval(interval); // Needed for Chrome to end game
                 }
             }
         }
@@ -143,9 +162,16 @@ function draw() {
         else {
             lives--;
             if(!lives) {
-                alert("GAME OVER");
-                document.location.reload();
-                clearInterval(interval); // Needed for Chrome to end game
+                ballStop()
+                let finalScore = score
+                let scoreElement = `
+                    <h2>Score</h2>
+                    <h3 id="score">${finalScore}</h3>`
+                scoreDisplay.innerHTML += scoreElement
+                // alert("GAME OVER");
+                gameOver()
+                // document.location.reload();
+                // clearInterval(interval); // Needed for Chrome to end game
             }
             else {
                 x = canvas.width/2;
@@ -175,6 +201,7 @@ function draw() {
 }
 
 var interval = setInterval(draw, 10);
+
 
 
 
