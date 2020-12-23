@@ -1,23 +1,11 @@
 const endPoint = "http://localhost:3000/api/v1/games"
 const gameForm = document.getElementById("game-form")
-const scoreModal = document.getElementById("scoreModal");
-const testButton = document.getElementById("test");
 
 
 document.addEventListener('DOMContentLoaded', () => {
     loadGames()
     submitForm()
 })
-
-testButton.addEventListener("click", () => {
-    modalDisplay()
-})
-
-function modalDisplay() {
-    scoreModal.style.display = "block";
-}
-
-
 
 function loadGames() {
     fetch(endPoint)
@@ -33,7 +21,7 @@ function loadGames() {
 
 
 function submitForm(){
-    scoreModal.addEventListener("submit", (e) => formHandler(e))
+    gameForm.addEventListener("submit", (e) => formHandler(e))
 }
 
 function formHandler(e) {
@@ -67,6 +55,5 @@ function postFetch(score, user_name){
         }
     })
     .catch(alert)
-    canvasReload()
 }
 

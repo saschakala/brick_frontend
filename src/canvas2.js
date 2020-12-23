@@ -23,6 +23,7 @@ var brickPadding = 7;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 12;
 
+
 var bricks = [];
 for(var c=0; c<brickColumnCount; c++) {
     bricks[c] = [];
@@ -33,6 +34,13 @@ for(var c=0; c<brickColumnCount; c++) {
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+
+
+
+function canvasReload() {
+    document.location.reload();
+    clearInterval(interval); // Needed for Chrome to end game
+}
 
 function keyDownHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
@@ -144,8 +152,9 @@ function draw() {
             lives--;
             if(!lives) {
                 alert("GAME OVER");
-                document.location.reload();
-                clearInterval(interval); // Needed for Chrome to end game
+                modalDisplay()
+                // document.location.reload();
+                // clearInterval(interval); // Needed for Chrome to end game
             }
             else {
                 x = canvas.width/2;
@@ -175,6 +184,7 @@ function draw() {
 }
 
 var interval = setInterval(draw, 10);
+
 
 
 
