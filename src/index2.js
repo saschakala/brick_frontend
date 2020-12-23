@@ -1,47 +1,11 @@
-const endPoint = "http://localhost:3000/api/v1/games";
-const gameForm = document.getElementById("game-form");
-const scoreModal = document.getElementById("scoreModal");
-const buttonModal = document.getElementById("buttonModal");
+const endPoint = "http://localhost:3000/api/v1/games"
+const gameForm = document.getElementById("game-form")
 
 
 document.addEventListener('DOMContentLoaded', () => {
     loadGames()
     submitForm()
 })
-
-function gameOver() {
-    scoreModal.style.display = "block";
-    document.getElementById("game-over").style.display = "block";
-    clickToClose()
-}
-
-function gameWin() {
-    scoreModal.style.display = "block";
-    document.getElementById("game-win").style.display = "block";
-    clickToClose()
-}
-
-function modalClear() {
-    scoreModal.style.display = "none";
-    replay()
-}
-
-function clickToClose() {
-    const closeX = document.getElementById("close-modal")
-    closeX.addEventListener("click", handleCloseClick)
-}
-
-function handleCloseClick() {
-    scoreModal.style.display = "none"
-    canvasReload()
-}
-
-function replay() {
-    buttonModal.style.display = "block";
-    replayButton = document.getElementById("replay-button")
-    replayButton.addEventListener("click", canvasReload)
-}
-
 
 function loadGames() {
     fetch(endPoint)
@@ -63,7 +27,7 @@ function submitForm(){
 function formHandler(e) {
     e.preventDefault()
     // change what formScore is equal to
-    const formScore = parseInt(document.getElementById("score").innerText)
+    const formScore = parseInt(document.getElementById("score").value)
     const formName = document.getElementById("name").value
     postFetch(formScore, formName)
 }
@@ -91,7 +55,5 @@ function postFetch(score, user_name){
         }
     })
     .catch(alert)
-    modalClear()
 }
-
 

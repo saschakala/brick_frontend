@@ -10,26 +10,20 @@
     </style>
 </head>
 <body>
+
+<div class="button-modal" id="buttonModal">
+    <div class="button-modal-content">
+        <button type="button" class="button" id="replay-button">PLAY AGAIN</button>
+    </div>
+</div>
+
+
 <div class="elements">
     <div class="element">
         <canvas id="myCanvas" width="480" height="320"></canvas>
     </div>
 
     <div class="element">
-
-        <form id="game-form" data-action="create">
-            <div class="input-field">
-                <input type="text" name="name" id="name" placeholder="Name">
-                <label for="name"></label>
-            </div>
-    
-            <div class="input-field">
-                <input type="number" name="score" id="score" placeholder="Score">
-                <label for="score"></label>
-            </div>
-
-            <input type="submit" value="Save Score" class="button">
-        </form>
 
         <div id="score-board-container"> </div>
         
@@ -38,9 +32,48 @@
 </div>
 
 
+
+
+<div id="scoreModal" class="modal">
+
+    <!-- GAME OVER popup -->
+    <div id="game-over"> 
+        <h1>GAME OVER</h1>
+    </div>
+
+    <!-- WIN popup -->
+    <div id="game-win"> 
+        <h1>CONGRATULATIONS, YOU'VE WON!</h1>
+    </div>
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="close-modal">&times;</span>
+
+      <!-- display form -->
+        <div id="score-display"></div>
+
+        <!-- save score form -->
+        <form id="game-form" data-action="create">
+            <div class="input-field">
+                <input type="text" name="name" id="name" placeholder="Name">
+                <label for="name"></label>
+            </div>
+
+            <input type="submit" value="Save Score" class="button">
+        </form>
+
+    </div>
+  
+</div>
+
+
+
+
 </body>
-<!-- <script type="text/javascript" src="src/canvas.js"></script> -->
+<script type="text/javascript" src="src/models/game.js"></script>
+<script type="text/javascript" src="src/canvas.js"></script>
+<!-- <script type="text/javascript" src="src/canvas2.js"></script> -->
 <!-- <script type="text/javascript" src="src/test.js"></script> -->
 <script type="text/javascript" src="src/index.js"></script>
-<script type="text/javascript" src="src/models/game.js"></script>
 </html>
