@@ -80,7 +80,7 @@ function collisionDetection() {
                             <h3 id="score">${finalScore}</h3>`
                         scoreDisplay.innerHTML += scoreElement
                         // alert("GAME OVER");
-                        modalDisplay()
+                        gameWin()
                         // alert("YOU WIN, CONGRATULATIONS!");
                         // document.location.reload();
                         // clearInterval(interval); // Needed for Chrome to end game
@@ -169,7 +169,7 @@ function draw() {
                     <h3 id="score">${finalScore}</h3>`
                 scoreDisplay.innerHTML += scoreElement
                 // alert("GAME OVER");
-                modalDisplay()
+                gameOver()
                 // document.location.reload();
                 // clearInterval(interval); // Needed for Chrome to end game
             }

@@ -17,6 +17,7 @@
     </div>
 </div>
 
+
 <div class="elements">
     <div class="element">
         <canvas id="myCanvas" width="480" height="320"></canvas>
@@ -31,15 +32,28 @@
 </div>
 
 
+
+
 <div id="scoreModal" class="modal">
+
+    <!-- GAME OVER popup -->
+    <div id="game-over"> 
+        <h1>GAME OVER</h1>
+    </div>
+
+    <!-- WIN popup -->
+    <div id="game-win"> 
+        <h1>CONGRATULATIONS, YOU'VE WON!</h1>
+    </div>
 
     <!-- Modal content -->
     <div class="modal-content">
       <!-- <span class="close">&times;</span> -->
 
-        <div id="score-display">
-        </div>
+      <!-- display form -->
+        <div id="score-display"></div>
 
+        <!-- save score form -->
         <form id="game-form" data-action="create">
             <div class="input-field">
                 <input type="text" name="name" id="name" placeholder="Name">
