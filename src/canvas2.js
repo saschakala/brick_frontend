@@ -35,6 +35,10 @@ for(var c=0; c<brickColumnCount; c++) {
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
+function modalDisplay() {
+    const scoreModal = document.getElementById("scoreModal")
+    scoreModal.style.display = "block";
+}
 
 
 function canvasReload() {
@@ -151,6 +155,8 @@ function draw() {
         else {
             lives--;
             if(!lives) {
+                dy = 0
+                dx = 0
                 alert("GAME OVER");
                 modalDisplay()
                 // document.location.reload();
