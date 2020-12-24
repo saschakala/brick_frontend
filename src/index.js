@@ -93,9 +93,7 @@ function postFetch(score, user_name){
     .then(resp => resp.json())
     .then(game => {
         if (!game.errors) {
-        const gameData = game.data;
-        let newGame = new Game(gameData.id, gameData.attributes);
-        document.querySelector("#score-board-container").innerHTML += newGame.renderGame();
+            loadGames()
         } else {
             throw new Error (`${game.errors}`)
         }
