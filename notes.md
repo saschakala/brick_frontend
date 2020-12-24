@@ -1,9 +1,8 @@
 MVP:
 
-- [ ] Brick game that keeps track of score
-- [ ] Can save scores under a user (fetch - CREATE)
-- [ ] Can view scores of all the users (fetch - READ)
-- [ ] Can delete your score (fetch - DELETE)
+- [x] Brick game that keeps track of score
+- [x] Can save scores under a user (fetch - CREATE)
+- [x] Can view scores of all the users (fetch - READ)
 
 ### Models:
 
@@ -33,5 +32,4 @@ has_many :games
 - [ ] increase speed every 5 paddle saves
 - [ ] change ball color every paddle hit
 - [ ] pause game
-- [ ] move score off canvas
 - [ ] increment score differently for different speed classes
