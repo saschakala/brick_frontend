@@ -14,6 +14,7 @@ class Game{
             </div>
             <br> </br>`;
     }
+
 }
 
 Game.all = []
