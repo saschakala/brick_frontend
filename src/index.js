@@ -45,15 +45,25 @@ function replay() {
 
 function loadGames() {
     fetch(endPoint)
-    .then(response => response.json())
+    .then(resp => resp.json())
     .then(games => {
-        games.data.forEach(game => {
-            const newGame = new Game(game.id, game.attributes);
-
-            document.querySelector("#score-board-container").innerHTML += newGame.renderGame();
-        });
+        addGamesToPage(games)
     })
 }
+
+function addGamesToPage(games) {
+    document.querySelector("#score-board-container").innerHTML = ""
+    games.data.forEach(game => {
+        attachGame(game)
+    });
+}
+
+function attachGame(game) {
+    const newGame = new Game(game.id, game.attributes);
+    document.querySelector("#score-board-container").innerHTML += newGame.renderGame();
+}
+
+
 
 
 function submitForm(){
@@ -83,9 +93,7 @@ function postFetch(score, user_name){
     .then(resp => resp.json())
     .then(game => {
         if (!game.errors) {
-        const gameData = game.data;
-        let newGame = new Game(gameData.id, gameData.attributes);
-        document.querySelector("#score-board-container").innerHTML += newGame.renderGame();
+            loadGames()
         } else {
             throw new Error (`${game.errors}`)
         }
