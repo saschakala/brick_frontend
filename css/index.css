@@ -89,3 +89,6 @@
   height: 15%;
   }
    
+.score-table {
+    padding:0 10px 0 0; /* Only right padding*/
+}
