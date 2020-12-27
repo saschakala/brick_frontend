@@ -52,7 +52,12 @@ function loadGames() {
 }
 
 function addGamesToPage(games) {
-    document.querySelector("#score-board-container").innerHTML = ""
+    document.querySelector("#score-board-container").innerHTML =            
+        `<tr>
+            <th>NAME:</th>
+            <th>SCORE:</th>
+        </tr>`
+        
     games.data.forEach(game => {
         attachGame(game)
     });
