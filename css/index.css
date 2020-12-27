@@ -90,8 +90,12 @@
   height: 15%;
   }
    
-.score-table-header {
+.score-table {
     padding:0 10px 30px 0;
     width:400px;
     text-align: left;
+}
+
+#score-board-container {
+  padding:0 10px 0px 0;
 }
