@@ -13,6 +13,7 @@
    html {
      box-sizing: border-box;
    }
+   
    *, *:before, *:after {
      box-sizing: inherit;
    }
@@ -89,6 +90,8 @@
   height: 15%;
   }
    
-.score-table {
-    padding:0 10px 0 0; /* Only right padding*/
+.score-table-header {
+    padding:0 10px 30px 0;
+    width:400px;
+    text-align: left;
 }
