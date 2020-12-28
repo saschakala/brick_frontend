@@ -4,7 +4,7 @@
 body {
   font-family: 'Lekton', sans-serif;
   font-style: bold;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 h1 {
@@ -17,10 +17,18 @@ h2 {
   font-size: 30px;
 }
 
+input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .button {
   font-family: 'Lekton', sans-serif;
   font-size: 16px;
+  -webkit-appearance: none;
+  appearance: none;
 }
+
 
 #replay-button {
   font-family: 'Press Start 2P', cursive;
