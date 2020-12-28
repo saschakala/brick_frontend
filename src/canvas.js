@@ -165,8 +165,8 @@ function draw() {
                 ballStop()
                 let finalScore = score
                 let scoreElement = `
-                    <h2>Score</h2>
-                    <h3 id="score">${finalScore}</h3>`
+                    <h2>Score:</h2>
+                    <h2 id="score">Score: ${finalScore}</h2>`
                 scoreDisplay.innerHTML += scoreElement
                 // alert("GAME OVER");
                 gameOver()

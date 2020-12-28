@@ -83,8 +83,8 @@ function submitForm(){
 
 function formHandler(e) {
     e.preventDefault()
-    // change what formScore is equal to
-    const formScore = parseInt(document.getElementById("score").innerText)
+    const formScorePhrase = document.getElementById("score").innerText
+    const formScore = parseInt(formScorePhrase.replace("Score: ", ""))
     const formName = document.getElementById("name").value
     postFetch(formScore, formName)
 }
