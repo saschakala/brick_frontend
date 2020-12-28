@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lekton:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  font-family: 'Lekton', sans-serif;
+  font-style: bold;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 75px;
+}
+
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 36px;
+}
+
+#game-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .elements {
     display: flex;
     flex-direction: row;
@@ -86,12 +111,10 @@
 
 #game-over {
   display: none;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #fefefe;
   margin: 3%;
-  padding: 20px;
   border: 1px solid #888;
   width: 15%;
   height: 15%;
