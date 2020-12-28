@@ -75,15 +75,9 @@ function collisionDetection() {
                     score++;
                     if(score === brickRowCount*brickColumnCount) {
                         let finalScore = score
-                        let scoreElement = `
-                            <h2>Score</h2>
-                            <h3 id="score">${finalScore}</h3>`
+                        let scoreElement = `<p id="score">Score: ${finalScore}</p>`
                         scoreDisplay.innerHTML += scoreElement
-                        // alert("GAME OVER");
                         gameWin()
-                        // alert("YOU WIN, CONGRATULATIONS!");
-                        // document.location.reload();
-                        // clearInterval(interval); // Needed for Chrome to end game
                 }
             }
         }
@@ -164,14 +158,9 @@ function draw() {
             if(!lives) {
                 ballStop()
                 let finalScore = score
-                let scoreElement = `
-                    <h2>Score</h2>
-                    <h3 id="score">${finalScore}</h3>`
+                let scoreElement = `<p id="score">Score: ${finalScore}</p>`
                 scoreDisplay.innerHTML += scoreElement
-                // alert("GAME OVER");
                 gameOver()
-                // document.location.reload();
-                // clearInterval(interval); // Needed for Chrome to end game
             }
             else {
                 x = canvas.width/2;

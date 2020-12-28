@@ -1,3 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Lekton:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+html {
+  background-color: aqua;
+}
+
+body {
+  font-family: 'Lekton', sans-serif;
+  font-style: bold;
+  font-size: 20px;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 75px;
+  color: #7918CA;
+}
+
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.button {
+  font-family: 'Lekton', sans-serif;
+  font-size: 16px;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 5% auto;
+}
+
+#scoreboard-title {
+  background-color: #C812C5;
+  color: #F3BBF2;
+  margin: 10%;
+}
+
+#scoreboard-background {
+  background-color: #F49B61;
+  width: 400px;
+}
+
+
+#replay-button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  color: #fff ;
+  background-color: #DB0FC6;
+}
+
+#game-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .elements {
     display: flex;
     flex-direction: row;
@@ -6,20 +69,28 @@
     margin: 0 -10px;
   }
   
-  .element {
-    margin: 0 10px;
-   }
- 
-   html {
-     box-sizing: border-box;
-   }
-   *, *:before, *:after {
-     box-sizing: inherit;
-   }
+.element {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -33,15 +104,28 @@
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
-  margin: 5% auto; /* 15% from the top and centered */
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #EB93F7 ;
+  margin: 0%; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 25%; /* Could be more or less, depending on screen size */
   }
 
+#close-modal {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
 .button-modal {
   display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -54,7 +138,9 @@
   }
 
 .button-modal-content {
-  background-color: #fefefe;
+  justify-content: center;
+  align-items: center;
+  background-color: #E2EB2D;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
@@ -71,21 +157,50 @@
 
 #game-over {
   display: none;
-  background-color: #fefefe;
-  margin: 5% auto; /* 15% from the top and centered */
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #EC1FD7;
+  margin: 3%;
+  border: 1px solid #888;
+  width: 15%;
+  height: 15%;
+  }
+
+#game-win {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #EC1FD7;
+  margin: 3%;
   padding: 20px;
   border: 1px solid #888;
   width: 15%; /* Could be more or less, depending on screen size */
   height: 15%;
   }
 
-#game-win {
-  display: none;
-  background-color: #fefefe;
-  margin: 5% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 15%; /* Could be more or less, depending on screen size */
-  height: 15%;
+  .game-result {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* width: 100%;
+    height: 100%;
+    margin: auto */
   }
    
+/* .score-table {
+    padding:0 5px 0px 0;
+    width:300px;
+    text-align: left;
+} */
+
+#score-board-container {
+  background-color: #F3BBF2;
+  color: #C812C5;
+  padding:0 5px 0px 0;
+  width:300px;
+  text-align: left;
+  margin: 0 0 10% 0;
+}
+

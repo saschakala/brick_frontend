@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function gameOver() {
-    scoreModal.style.display = "block";
-    document.getElementById("game-over").style.display = "block";
+    scoreModal.style.display = "flex";
+    document.getElementById("game-over").style.display = "flex";
     clickToClose()
 }
 
 function gameWin() {
-    scoreModal.style.display = "block";
-    document.getElementById("game-win").style.display = "block";
+    scoreModal.style.display = "flex";
+    document.getElementById("game-win").style.display = "flex";
     clickToClose()
 }
 
@@ -29,15 +29,21 @@ function modalClear() {
 function clickToClose() {
     const closeX = document.getElementById("close-modal")
     closeX.addEventListener("click", handleCloseClick)
+    window.addEventListener("click", function(event) {
+        if (event.target === scoreModal) {
+            handleCloseClick()
+          }
+    })
 }
+
 
 function handleCloseClick() {
     scoreModal.style.display = "none"
-    canvasReload()
+    replay()
 }
 
 function replay() {
-    buttonModal.style.display = "block";
+    buttonModal.style.display = "flex";
     replayButton = document.getElementById("replay-button")
     replayButton.addEventListener("click", canvasReload)
 }
@@ -52,7 +58,12 @@ function loadGames() {
 }
 
 function addGamesToPage(games) {
-    document.querySelector("#score-board-container").innerHTML = ""
+    document.querySelector("#score-board-container").innerHTML =            
+        `<tr>
+            <th>NAME:</th>
+            <th>SCORE:</th>
+        </tr>`
+        
     games.data.forEach(game => {
         attachGame(game)
     });
@@ -72,8 +83,8 @@ function submitForm(){
 
 function formHandler(e) {
     e.preventDefault()
-    // change what formScore is equal to
-    const formScore = parseInt(document.getElementById("score").innerText)
+    const formScorePhrase = document.getElementById("score").innerText
+    const formScore = parseInt(formScorePhrase.replace("Score: ", ""))
     const formName = document.getElementById("name").value
     postFetch(formScore, formName)
 }

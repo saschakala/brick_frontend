@@ -17,16 +17,28 @@
     </div>
 </div>
 
+<div id="game-header">
+    <h1>BRICK</h1>
+</div>
 
+<!-- elements for flex styling -->
 <div class="elements">
+
+    <!-- canvas -->
     <div class="element">
         <canvas id="myCanvas" width="480" height="320"></canvas>
     </div>
 
-    <div class="element">
-
-        <div id="score-board-container"> </div>
-        
+    <!-- score board -->
+    <div class="element" id="scoreboard-background">
+        <h2 id="scoreboard-title" style="font-size: 20px;">Score Board:</h2>
+        <table class="score-table" style="float:left" id="score-board-container">
+            <tr>
+                <th>NAME:</th>
+                <th>SCORE:</th>
+            </tr>
+        </table>
+        <!-- <table class="score-table" style="float:left" id="score-board-container"> </table> -->
     </div>
 
 </div>
@@ -38,17 +50,23 @@
 
     <!-- GAME OVER popup -->
     <div id="game-over"> 
-        <h1>GAME OVER</h1>
+        <div class="game-result">
+            <h2>GAME OVER</h2>
+        </div>
     </div>
 
     <!-- WIN popup -->
     <div id="game-win"> 
-        <h1>CONGRATULATIONS, YOU'VE WON!</h1>
+        <div class="game-result">
+            <h2>CONGRATULATIONS, YOU'VE WON!</h2>
+        </div>
     </div>
 
     <!-- Modal content -->
     <div class="modal-content">
       <span id="close-modal">&times;</span>
+
+      <h2 style="font-size: 24px;">Your Game</h2>
 
       <!-- display form -->
         <div id="score-display"></div>
@@ -60,7 +78,7 @@
                 <label for="name"></label>
             </div>
 
-            <input type="submit" value="Save Score" class="button">
+            <input type="submit" value="Save" class="button">
         </form>
 
     </div>
