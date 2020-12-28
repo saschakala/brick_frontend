@@ -20,7 +20,7 @@
 
 /* The Modal (background) */
 .modal {
-  display: flex; /* Hidden by default */
+  display: none; /* Hidden by default */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -38,12 +38,18 @@
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  flex: 0 0 120px;
-  margin: 5% auto; /* 15% from the top and centered */
+  margin: 0%; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 25%; /* Could be more or less, depending on screen size */
   }
+
+#close-modal {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
 
 .button-modal {
   display: none; /* Hidden by default */
@@ -79,34 +85,37 @@
 }
 
 #game-over {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #fefefe;
-  margin: 10% auto;
+  margin: 3%;
   padding: 20px;
   border: 1px solid #888;
   width: 15%;
   height: 15%;
   }
 
-.game-result {
-  flex: 0 0 120px;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  margin: auto
-}
-
 #game-win {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #fefefe;
-  margin: 5% auto; /* 15% from the top and centered */
+  margin: 3%;
   padding: 20px;
   border: 1px solid #888;
   width: 15%; /* Could be more or less, depending on screen size */
   height: 15%;
+  }
+
+  .game-result {
+    flex: 0 0 120px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: auto
   }
    
 /* .score-table {

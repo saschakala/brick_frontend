@@ -29,11 +29,17 @@ function modalClear() {
 function clickToClose() {
     const closeX = document.getElementById("close-modal")
     closeX.addEventListener("click", handleCloseClick)
+    window.addEventListener("click", function(event) {
+        if (event.target === scoreModal) {
+            handleCloseClick()
+          }
+    })
 }
+
 
 function handleCloseClick() {
     scoreModal.style.display = "none"
-    canvasReload()
+    replay()
 }
 
 function replay() {
