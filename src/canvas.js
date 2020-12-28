@@ -41,6 +41,11 @@ function ballStop() {
     dx = 0
 }
 
+function ballGo() {
+    dy = 2
+    dx = -2
+}
+
 function canvasReload() {
     document.location.reload();
     clearInterval(interval); // Needed for Chrome to end game

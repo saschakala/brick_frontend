@@ -2,11 +2,15 @@ const endPoint = "http://localhost:3000/api/v1/games";
 const gameForm = document.getElementById("game-form");
 const scoreModal = document.getElementById("scoreModal");
 const buttonModal = document.getElementById("buttonModal");
+const pause = document.getElementById("pause-game");
+const deleteButton = document.querySelector(".delete-button");
 
 
 document.addEventListener('DOMContentLoaded', () => {
     loadGames()
     submitForm()
+    pauseGame()
+    eventDelegation()
 })
 
 function gameOver() {
@@ -75,8 +79,6 @@ function attachGame(game) {
 }
 
 
-
-
 function submitForm(){
     gameForm.addEventListener("submit", (e) => formHandler(e))
 }
@@ -113,4 +115,32 @@ function postFetch(score, user_name){
     modalClear()
 }
 
+function eventDelegation() {
+    const scoreList = document.querySelector(".score-table")
+    scoreList.addEventListener("click", function(e){
+        if (e.target.className == "delete-button button") {
+            console.log("you clicked delete")
+            const gameID = e.target.id
+            deleteGame(gameID)
+        }
+    })
+}
 
+async function deleteGame(id){
+    const resp = await fetch(`${endPoint}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const data = await resp.json()
+    loadGames()
+  }
+
+function pauseGame() {
+    pause.addEventListener("click", handlePause)
+}
+
+function handlePause() {
+    dx === 0 ? ballGo() : ballStop()
+}
