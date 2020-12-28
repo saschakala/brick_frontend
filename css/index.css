@@ -4,7 +4,7 @@
 body {
   font-family: 'Lekton', sans-serif;
   font-style: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 h1 {
@@ -14,7 +14,7 @@ h1 {
 
 h2 {
   font-family: 'Press Start 2P', cursive;
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .button {
@@ -41,17 +41,17 @@ h2 {
     margin: 0 -10px;
   }
   
-  .element {
-    margin: 0 10px;
-   }
- 
-   html {
-     box-sizing: border-box;
-   }
-   
-   *, *:before, *:after {
-     box-sizing: inherit;
-   }
+.element {
+  margin: 0 10px;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 
 /* The Modal (background) */
 .modal {
@@ -72,6 +72,8 @@ h2 {
 
 /* Modal Content/Box */
 .modal-content {
+  justify-content: center;
+  align-items: center;
   background-color: #fefefe;
   margin: 0%; /* 15% from the top and centered */
   padding: 20px;
