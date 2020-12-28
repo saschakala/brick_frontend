@@ -17,6 +17,16 @@ h2 {
   font-size: 36px;
 }
 
+.button {
+  font-family: 'Lekton', sans-serif;
+  font-size: 16px;
+}
+
+#replay-button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+}
+
 #game-header {
   display: flex;
   justify-content: center;
@@ -152,3 +162,4 @@ h2 {
   width:300px;
   text-align: left;
 }
+
