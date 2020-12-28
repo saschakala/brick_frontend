@@ -8,11 +8,10 @@ class Game{
 
     renderGame(){
         return `
-            <div data-id=${this.id}>
-            <h3>${this.userName}</h3>
-            <p>${this.score}</p>
-            </div>
-            <br> </br>`;
+            <tr data-id=${this.id} style="text-align: left">
+                <td>${this.userName}</td>
+                <td>${this.score}</td>
+            </tr>`;
     }
 
 }
