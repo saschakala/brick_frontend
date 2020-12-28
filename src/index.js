@@ -43,7 +43,7 @@ function handleCloseClick() {
 }
 
 function replay() {
-    buttonModal.style.display = "block";
+    buttonModal.style.display = "flex";
     replayButton = document.getElementById("replay-button")
     replayButton.addEventListener("click", canvasReload)
 }
