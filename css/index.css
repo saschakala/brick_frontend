@@ -44,7 +44,7 @@ input {
 
 #scoreboard-background {
   background-color: #F49B61;
-  width: 400px;
+  width: 500px;
 }
 
 
@@ -199,7 +199,7 @@ input {
   background-color: #F3BBF2;
   color: #C812C5;
   padding:0 5px 0px 0;
-  width:300px;
+  width:400px;
   text-align: left;
   margin: 0 0 10% 0;
 }
