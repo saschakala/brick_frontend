@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function gameOver() {
-    scoreModal.style.display = "block";
-    document.getElementById("game-over").style.display = "block";
+    scoreModal.style.display = "flex";
+    document.getElementById("game-over").style.display = "flex";
     clickToClose()
 }
 
 function gameWin() {
-    scoreModal.style.display = "block";
-    document.getElementById("game-win").style.display = "block";
+    scoreModal.style.display = "flex";
+    document.getElementById("game-win").style.display = "flex";
     clickToClose()
 }
 
