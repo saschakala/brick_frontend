@@ -11,7 +11,7 @@ class Game{
             <tr data-id=${this.id} style="text-align: left">
                 <td>${this.userName}</td>
                 <td>${this.score}</td>
-                <td><button>delete</button></td>
+                <td><button data-id=${this.id} class="delete-button button">delete</button></td>
             </tr>`;
     }
 
