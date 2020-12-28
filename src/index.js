@@ -2,11 +2,13 @@ const endPoint = "http://localhost:3000/api/v1/games";
 const gameForm = document.getElementById("game-form");
 const scoreModal = document.getElementById("scoreModal");
 const buttonModal = document.getElementById("buttonModal");
+const pause = document.getElementById("pause-game");
 
 
 document.addEventListener('DOMContentLoaded', () => {
     loadGames()
     submitForm()
+    pauseGame()
 })
 
 function gameOver() {
@@ -113,4 +115,12 @@ function postFetch(score, user_name){
     modalClear()
 }
 
+function pauseGame() {
+    pause.addEventListener("click", handlePause)
+    // debugger
+}
 
+function handlePause() {
+    // debugger
+    dx === 0 ? ballGo() : ballStop()
+}
