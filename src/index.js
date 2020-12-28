@@ -121,14 +121,21 @@ function eventDelegation() {
         if (e.target.className == "delete-button button") {
             console.log("you clicked delete")
             const gameID = e.target.id
+            deleteGame(gameID)
         }
     })
 }
 
-
-// async function handleDelete(id) {
-
-// }
+async function deleteGame(id){
+    const resp = await fetch(`${endPoint}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const data = await resp.json()
+    loadGames()
+  }
 
 function pauseGame() {
     pause.addEventListener("click", handlePause)
