@@ -121,7 +121,6 @@ function eventDelegation() {
         if (e.target.className == "delete-button button") {
             console.log("you clicked delete")
             const gameID = e.target.id
-            debugger
         }
     })
 }
