@@ -92,7 +92,7 @@ function formHandler(e) {
 }
 
 function postFetch(score, user_name){
-    const bodyData = 
+    const bodyData =
     // this object created to satisfy strong params on back end (:game is required)
         {game:
             {score, user_name}
